@@ -15,7 +15,20 @@ using namespace std;
 //Essayez encore : 13
 //Essayez encore : 12
 //Merci, vous avez entre 12
-
+int lire_multiple_de(int n)
+{
+    cout << "Entrez un multiple de " + to_string(n) + ": ";
+    int guess;
+    cin >> guess;
+    while (cin.fail() or (guess % 3 != 0))
+    {
+        cin.clear(); // reset failbit
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        cout << endl << "Essayez encore :";
+        cin >> guess;
+    }
+    return guess;
+}
 int main() {
 
    int n = lire_multiple_de(3);

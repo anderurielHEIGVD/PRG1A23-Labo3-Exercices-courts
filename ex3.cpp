@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 
 using namespace std;
 
@@ -6,6 +7,21 @@ using namespace std;
 // le plus petite caractère (au sens du code ASCII) de la chaine
 // str. Si cette lettre apparait plusieurs fois c'est la
 // dernière instance qui doit être retournée.
+
+char& plus_petite_lettre(std::string& str)
+{
+    int n = 0;
+    for(int i = 0; i < str.length(); ++i)
+    {
+        char temp = str[i];
+        if (temp <= str[n])
+        {
+            n = i;
+        }
+    }
+    char& ref = str[n];
+    return ref;
+}
 
 int main() {
 

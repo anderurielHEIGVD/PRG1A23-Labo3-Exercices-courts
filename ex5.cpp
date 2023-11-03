@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <limits>
 using namespace std;
 
 // ré-écrivez le code suivant sans utiliser les
